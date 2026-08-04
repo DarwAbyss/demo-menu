@@ -1,0 +1,10 @@
+# Archivos de dependencias (pesados)
+node_modules/
+
+# Variables de entorno y claves
+.env
+.env.local
+
+# Archivos temporales del sistema o editor
+.DS_Store
+.vscode/

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargando...</title>
+  <!-- Título principal de la ventana -->
+  <title>Demo Interactiva | Klovia Web Solutions</title>
+
+  <!-- ============================================ -->
+  <!-- ETIQUETAS OPEN GRAPH PARA WHATSAPP / REDES   -->
+  <!-- ============================================ -->
+  
+  <!-- 1. Título que aparecerá en la tarjeta de WhatsApp -->
+  <meta property="og:title" content="Vista Previa de tu Próxima Página Web 🚀" />
+  
+  <!-- 2. Breve descripción (1-2 oraciones atractivas) -->
+  <meta property="og:description" content="Haz clic para probar la demo interactiva y ver cómo recibir pedidos o clientes directamente por WhatsApp." />
+  
+  <!-- 3. Tipo de contenido y nombre del sitio -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Klovia Web Solutions" />
+  
+  <!-- 4. URL exacta de la demo (URL final en Cloudflare Pages) -->
+  <meta property="og:url" content="https://tu-demo.pages.dev" />
+  
+  <!-- 5. Imagen de portada (IMPORTANTE: Debe ser una URL absoluta https://) -->
+  <meta property="og:image" content="https://tu-demo.pages.dev/preview.jpg" />
+  <meta property="og:image:secure_url" content="https://tu-demo.pages.dev/preview.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  
+  <!-- 6. Dimensiones recomendadas para la imagen de portada -->
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- CDN de Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
+
+  <main class="flex-grow">
+    <!-- ==================== HEADER TIPO TARJETA HERO ==================== -->
+    <header class="relative bg-gradient-to-r from-amber-600 to-orange-700 pb-16 pt-8 px-4 text-center">
+      <div class="max-w-3xl mx-auto space-y-3">
+        <img id="nav-logo" src="" alt="Logo" class="h-20 mx-auto object-contain hidden bg-white/10 p-2 rounded-2xl backdrop-blur-md" />
+        <h1 id="header-nombre" class="text-3xl sm:text-5xl font-black text-white tracking-tight"></h1>
+        <p id="header-slogan" class="text-sm sm:text-base text-amber-100 max-w-md mx-auto"></p>
+      </div>
+    </header>
+
+    <!-- BANNER DELIVERY FLOTANTE SOBRE EL HEADER -->
+    <div class="max-w-2xl mx-auto px-4 -mt-8 relative z-10">
+      <div id="banner-delivery" class="bg-slate-800 border border-slate-700/80 text-amber-400 text-xs sm:text-sm font-semibold py-3 px-6 rounded-2xl shadow-xl text-center backdrop-blur-lg">
+        <!-- Inyectado dinámicamente -->
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-4 py-8">
+      
+      <!-- ==================== FILTRO DE CATEGORÍAS (PESTAÑAS FIX) ==================== -->
+      <nav class="mb-8 border-b border-slate-800">
+        <div id="contenedor-categorias" class="flex gap-2 overflow-x-auto pb-3 scrollbar-none">
+          <!-- Botones inyectados dinámicamente -->
+        </div>
+      </nav>
+
+      <!-- ==================== LISTA COMPACTA DE PRODUCTOS ==================== -->
+      <!-- Estructura cambiada a 1 sola columna con filas horizontales -->
+      <div id="contenedor-productos" class="space-y-4">
+        <!-- Inyectado dinámicamente -->
+      </div>
+      
+      <!-- ==================== SECCIÓN SOBRE NOSOTROS (ESTILO BANNER) ==================== -->
+      <section class="mt-16 bg-slate-800/50 border border-slate-800 rounded-3xl p-6 sm:p-8">
+        <div class="grid md:grid-cols-12 gap-6 items-center">
+          
+          <div class="md:col-span-5 rounded-2xl overflow-hidden h-48 md:h-full bg-slate-800">
+            <img id="nosotros-imagen" src="" alt="Sobre nosotros" class="w-full h-full object-cover" onError="this.src='https://via.placeholder.com/600x400/1e293b/ffffff?text=Sobre+Nosotros'"/>
+          </div>
+
+          <div class="md:col-span-7 space-y-3">
+            <span id="nosotros-subtitulo" class="text-xs font-bold uppercase tracking-wider text-amber-500 block"></span>
+            <h2 id="nosotros-titulo" class="text-2xl font-bold text-white"></h2>
+            <p id="nosotros-descripcion" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
+
+            <ul id="nosotros-caracteristicas" class="space-y-1.5 text-xs font-medium text-amber-400 pt-2">
+              <!-- Inyectado dinámicamente -->
+            </ul>
+          </div>
+
+        </div>
+        <!-- ==================== SECCIÓN MAPA Y UBICACIÓN ==================== -->
+<section class="mt-16 bg-slate-800/40 border border-slate-800 rounded-3xl p-6 sm:p-8">
+  <div class="text-center max-w-xl mx-auto mb-6">
+    <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 block mb-1">Visítanos</span>
+    <h2 class="text-2xl font-bold text-white">Nuestra Ubicación</h2>
+    <p id="mapa-direccion-texto" class="text-xs sm:text-sm text-slate-400 mt-1"></p>
+  </div>
+
+  <!-- Contenedor del Mapa Integrado -->
+  <div class="relative w-full h-64 sm:h-80 rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-900 shadow-inner">
+    <iframe 
+      id="mapa-iframe"
+      class="w-full h-full border-0 filter grayscale invert contrast-125 opacity-80 hover:opacity-100 transition duration-500"
+      loading="lazy" 
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      src="">
+    </iframe>
+  </div>
+
+  <!-- Botón de navegación directa -->
+  <div class="mt-4 text-center">
+    <a 
+      id="mapa-btn-enlace" 
+      href="#" 
+      target="_blank" 
+      class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-xs font-bold text-amber-400 hover:bg-slate-700 hover:text-white transition">
+      <span>📍 Abrir en Google Maps</span>
+    </a>
+  </div>
+</section>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-950 border-t border-slate-800/80 py-8 px-4 text-center text-xs text-slate-400 mt-12">
+    <div class="max-w-md mx-auto space-y-2">
+      <p id="footer-ubicacion" class="font-medium text-slate-300"></p>
+      <p id="footer-horario" class="text-slate-500"></p>
+      <div class="pt-4 text-slate-600 border-t border-slate-900 mt-4">
+        &copy; <span id="footer-year"></span> <span id="footer-nombre"></span> — Desarrollado con Klovia Web Solutions
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lógica de renderizado con tu mismo data.js -->
+  <script src="js/data.js"></script>
+  <script>
+    // 1. Inicialización
+    document.title = negocioData.nombre;
+    document.getElementById('header-nombre').innerText = negocioData.nombre;
+    document.getElementById('header-slogan').innerText = negocioData.slogan;
+    document.getElementById('footer-nombre').innerText = negocioData.nombre;
+    document.getElementById('footer-year').innerText = new Date().getFullYear();
+    document.getElementById('footer-ubicacion').innerText = `📍 ${negocioData.contacto.ubicacion}`;
+    document.getElementById('footer-horario').innerText = `🕒 ${negocioData.contacto.horario}`;
+    document.getElementById('banner-delivery').innerText = negocioData.contacto.notaDelivery;
+
+    if (negocioData.logo) {
+      const imgLogo = document.getElementById('nav-logo');
+      imgLogo.src = negocioData.logo;
+      imgLogo.classList.remove('hidden');
+    }
+
+    // 2. Renderizar Botones de Categorías estilo Pestañas
+    const contCat = document.getElementById('contenedor-categorias');
+    negocioData.categorias.forEach((cat, index) => {
+      const btn = document.createElement('button');
+      btn.innerText = cat.nombre;
+      btn.onclick = () => filtrarProductos(cat.id);
+      btn.id = `btn-cat-${cat.id}`;
+      
+      btn.className = `px-4 py-2 text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap rounded-xl ${
+        index === 0 
+          ? `${negocioData.colores.primario} text-white shadow-lg` 
+          : 'bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white'
+      }`;
+      contCat.appendChild(btn);
+    });
+
+    // 3. Renderizar Productos en Estructura Horizontal (Fila)
+    function renderizarProductos(lista) {
+      const contProd = document.getElementById('contenedor-productos');
+      contProd.innerHTML = '';
+
+      lista.forEach(p => {
+        const msg = encodeURIComponent(`Hola, quisiera ordenar: 1x ${p.nombre} (${negocioData.moneda}${p.precio})`);
+        const waLink = `https://wa.me/${negocioData.whatsapp}?text=${msg}`;
+
+        contProd.innerHTML += `
+          <article class="bg-slate-800/80 border border-slate-700/60 rounded-2xl p-3 sm:p-4 flex gap-4 items-center justify-between hover:border-slate-600 transition group">
+            
+            <!-- Imagen Pequeña Cuadrada a la Izquierda -->
+            <div class="w-24 h-24 sm:w-28 sm:h-28 bg-slate-700 rounded-xl overflow-hidden flex-shrink-0 relative">
+              <img src="${p.imagen}" alt="${p.nombre}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onError="this.src='https://via.placeholder.com/150/1e293b/ffffff?text=Sin+Foto'"/>
+            </div>
+
+            <!-- Información Central -->
+            <div class="flex-grow space-y-1">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="font-bold text-white text-base sm:text-lg leading-snug">${p.nombre}</h3>
+                ${p.popular ? `<span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-400 border border-amber-500/30">⭐ POPULAR</span>` : ''}
+              </div>
+              <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">${p.descripcion}</p>
+              
+              <!-- Precio e Indicador -->
+              <div class="pt-1 flex items-center justify-between sm:justify-start gap-4">
+                <span class="font-extrabold text-base sm:text-lg text-amber-400">${negocioData.moneda}${p.precio}</span>
+              </div>
+            </div>
+
+            <!-- Botón de Acción Directo (WhatsApp) -->
+            <div class="flex-shrink-0">
+              <a href="${waLink}" target="_blank" aria-label="Pedir ${p.nombre}" class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl text-white shadow-md transition transform hover:scale-105 ${negocioData.colores.primario} ${negocioData.colores.hover}">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              </a>
+            </div>
+
+          </article>
+        `;
+      });
+    }
+
+    // 4. Filtrado de Categorías
+    function filtrarProductos(categoriaId) {
+      negocioData.categorias.forEach(cat => {
+        const btn = document.getElementById(`btn-cat-${cat.id}`);
+        if (cat.id === categoriaId) {
+          btn.className = `px-4 py-2 text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap rounded-xl ${negocioData.colores.primario} text-white shadow-lg`;
+        } else {
+          btn.className = 'px-4 py-2 text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap rounded-xl bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white';
+        }
+      });
+
+      if (categoriaId === 'todos') {
+        renderizarProductos(negocioData.productos);
+      } else {
+        const filtrados = negocioData.productos.filter(p => p.categoria === categoriaId);
+        renderizarProductos(filtrados);
+      }
+    }
+
+    renderizarProductos(negocioData.productos);
+
+    // 5. Carga de la Sección Sobre Nosotros
+    document.getElementById('nosotros-subtitulo').innerText = negocioData.nosotros.subtitulo;
+    document.getElementById('nosotros-titulo').innerText = negocioData.nosotros.titulo;
+    document.getElementById('nosotros-descripcion').innerText = negocioData.nosotros.descripcion;
+    document.getElementById('nosotros-imagen').src = negocioData.nosotros.imagen;
+
+    const contCarac = document.getElementById('nosotros-caracteristicas');
+    contCarac.innerHTML = '';
+    negocioData.nosotros.caracteristicas.forEach(item => {
+      contCarac.innerHTML += `
+        <li class="flex items-center gap-2">
+          <span>${item}</span>
+        </li>
+      `;
+    // Renderizar Mapa de Ubicación automáticamente al final de la página
+const direccion = negocioData.contacto.ubicacion;
+
+if (direccion) {
+  // 1. Mostrar la dirección en texto
+  document.getElementById('mapa-direccion-texto').innerText = `📍 ${direccion}`;
+
+  // 2. Codificar el texto de la dirección para crear la URL de Google Maps
+  const direccionCodificada = encodeURIComponent(direccion);
+  
+  // 3. Generar la URL para el iframe del mapa y el botón directo
+  const urlIframe = `https://maps.google.com/maps?q=${direccionCodificada}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  const urlMapaDirecto = `https://www.google.com/maps/search/?api=1&query=${direccionCodificada}`;
+
+  // 4. Asignar las URLs generadas a los elementos del DOM
+  document.getElementById('mapa-iframe').src = urlIframe;
+  document.getElementById('mapa-btn-enlace').href = urlMapaDirecto;
+}});
+  </script>
+</body>
+</html>
