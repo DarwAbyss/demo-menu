@@ -14,14 +14,13 @@
   <meta property="og:site_name" content="Klovia Web Solutions" />
 
   <!-- Tipografías: Poppins para títulos, Inter para texto -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- CDN de Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Extiende Tailwind con la tipografía y la paleta cálida del diseño.
     tailwind.config = {
       theme: {
         extend: {
@@ -39,7 +38,6 @@
   </script>
 
   <style>
-    /* Oculta la barra de scroll en la navegación de categorías, sin perder el gesto de scroll */
     #contenedor-categorias::-webkit-scrollbar { display: none; }
     #contenedor-categorias { scrollbar-width: none; }
   </style>
@@ -56,67 +54,63 @@
       </div>
 
       <div class="mx-auto -mt-16 max-w-3xl px-4 sm:-mt-20 lg:-mt-24 lg:max-w-5xl">
-  <div class="rounded-2xl border border-black/5 bg-white/90 p-6 text-center shadow-sm backdrop-blur sm:p-8">
-    <img id="nav-logo" src="" alt="Logo" class="mx-auto mb-3 h-14 w-14 rounded-xl object-contain hidden" onerror="this.classList.add('hidden')" />
-    <p id="header-subtitulo" class="font-display text-xs font-semibold uppercase tracking-[0.2em] text-amber-700"></p>
-    <h1 id="header-nombre" class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl"></h1>
-    <p id="header-slogan" class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-ink/70"></p>
-  </div>
-</div>
+        <div class="rounded-2xl border border-black/5 bg-white/90 p-6 text-center shadow-sm backdrop-blur sm:p-8">
+          <img id="nav-logo" src="" alt="Logo" class="mx-auto mb-3 h-14 w-14 rounded-xl object-contain hidden" onerror="this.classList.add('hidden')" />
+          <p id="header-subtitulo" class="font-display text-xs font-semibold uppercase tracking-[0.2em] text-amber-700"></p>
+          <h1 id="header-nombre" class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl"></h1>
+          <p id="header-slogan" class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-ink/70"></p>
+        </div>
+      </div>
 
-<div class="mx-auto mt-4 max-w-3xl px-4 lg:max-w-5xl">
-  <div id="banner-delivery" class="rounded-full border border-amber-700/15 bg-amber-50 px-5 py-2.5 text-center text-xs font-medium text-amber-800 sm:text-sm"></div>
-</div>
+      <div class="mx-auto mt-4 max-w-3xl px-4 lg:max-w-5xl">
+        <div id="banner-delivery" class="rounded-full border border-amber-700/15 bg-amber-50 px-5 py-2.5 text-center text-xs font-medium text-amber-800 sm:text-sm"></div>
+      </div>
     </header>
 
     <div class="mx-auto max-w-3xl px-4 lg:max-w-6xl">
+      <!-- NAVEGACIÓN DE CATEGORÍAS (PESTAÑAS) -->
+      <nav class="sticky top-0 z-20 -mx-4 mt-6 flex gap-2 overflow-x-auto border-b border-black/5 bg-cream/90 px-4 py-3 backdrop-blur">
+        <div id="contenedor-categorias" class="flex gap-2"></div>
+      </nav>
 
-  <!-- NAVEGACIÓN DE CATEGORÍAS (PESTAÑAS) -->
-  <nav class="sticky top-0 z-20 -mx-4 mt-6 flex gap-2 overflow-x-auto border-b border-black/5 bg-cream/90 px-4 py-3 backdrop-blur">
-    <div id="contenedor-categorias" class="flex gap-2"></div>
-  </nav>
-
-  <!-- LISTA DE PRODUCTOS (Agregado lg:grid-cols-3) -->
-  <div id="contenedor-productos" class="grid gap-4 py-6 sm:grid-cols-2 lg:grid-cols-3"></div>
-
-</div>
-
-      <!-- ==================== SECCIÓN SOBRE NOSOTROS ==================== -->
-      <section class="mb-12 rounded-2xl border border-black/5 bg-white p-6 sm:p-8 lg:p-10 lg:mb-16">
-        <div class="grid gap-6 md:grid-cols-12 md:items-center">
-          <div class="h-48 overflow-hidden rounded-xl bg-black/5 md:col-span-5 md:h-full">
-            <img id="nosotros-imagen" src="" alt="Sobre nosotros" class="h-full w-full object-cover" />
-          </div>
-
-          <div class="space-y-3 md:col-span-7">
-            <span id="nosotros-subtitulo" class="block font-display text-xs font-semibold uppercase tracking-[0.2em] text-amber-700"></span>
-            <h2 id="nosotros-titulo" class="font-display text-2xl font-bold text-ink"></h2>
-            <p id="nosotros-descripcion" class="text-sm leading-relaxed text-ink/70"></p>
-            <ul id="nosotros-caracteristicas" class="space-y-2 pt-2 text-sm font-medium text-ink/80"></ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== SECCIÓN MAPA Y UBICACIÓN ==================== -->
-      <section class="mb-12 rounded-2xl border border-black/5 bg-white p-6 sm:p-8 lg:p-10 lg:mb-16">
-        <div class="mx-auto mb-6 max-w-xl text-center">
-          <span class="mb-1 block font-display text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">Visítanos</span>
-          <h2 class="font-display text-2xl font-bold text-ink">Nuestra Ubicación</h2>
-          <p id="mapa-direccion-texto" class="mt-1 text-sm text-ink/60"></p>
-        </div>
-
-        <div class="relative h-64 w-full overflow-hidden rounded-xl border border-black/5 bg-black/5 sm:h-80 lg:h-96">
-          <iframe id="mapa-iframe" class="h-full w-full border-0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src=""></iframe>
-        </div>
-
-        <div class="mt-4 text-center">
-          <a id="mapa-btn-enlace" href="#" target="_blank" class="inline-flex items-center gap-2 rounded-full border border-black/10 bg-cream px-5 py-2.5 text-xs font-semibold text-ink/80 transition hover:border-amber-700/30 hover:text-amber-700">
-            Abrir en Google Maps
-          </a>
-        </div>
-      </section>
-
+      <!-- LISTA DE PRODUCTOS -->
+      <div id="contenedor-productos" class="grid gap-4 py-6 sm:grid-cols-2 lg:grid-cols-3"></div>
     </div>
+
+    <!-- ==================== SECCIÓN SOBRE NOSOTROS ==================== -->
+    <section class="mx-auto max-w-3xl px-4 mb-12 rounded-2xl border border-black/5 bg-white p-6 sm:p-8 lg:p-10 lg:max-w-6xl lg:mb-16">
+      <div class="grid gap-6 md:grid-cols-12 md:items-center">
+        <div class="h-48 overflow-hidden rounded-xl bg-black/5 md:col-span-5 md:h-full">
+          <img id="nosotros-imagen" src="" alt="Sobre nosotros" class="h-full w-full object-cover" />
+        </div>
+
+        <div class="space-y-3 md:col-span-7">
+          <span id="nosotros-subtitulo" class="block font-display text-xs font-semibold uppercase tracking-[0.2em] text-amber-700"></span>
+          <h2 id="nosotros-titulo" class="font-display text-2xl font-bold text-ink"></h2>
+          <p id="nosotros-descripcion" class="text-sm leading-relaxed text-ink/70"></p>
+          <ul id="nosotros-caracteristicas" class="space-y-2 pt-2 text-sm font-medium text-ink/80"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN MAPA Y UBICACIÓN ==================== -->
+    <section class="mx-auto max-w-3xl px-4 mb-12 rounded-2xl border border-black/5 bg-white p-6 sm:p-8 lg:p-10 lg:max-w-6xl lg:mb-16">
+      <div class="mx-auto mb-6 max-w-xl text-center">
+        <span class="mb-1 block font-display text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">Visítanos</span>
+        <h2 class="font-display text-2xl font-bold text-ink">Nuestra Ubicación</h2>
+        <p id="mapa-direccion-texto" class="mt-1 text-sm text-ink/60"></p>
+      </div>
+
+      <div class="relative h-64 w-full overflow-hidden rounded-xl border border-black/5 bg-black/5 sm:h-80 lg:h-96">
+        <iframe id="mapa-iframe" class="h-full w-full border-0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src=""></iframe>
+      </div>
+
+      <div class="mt-4 text-center">
+        <a id="mapa-btn-enlace" href="#" target="_blank" class="inline-flex items-center gap-2 rounded-full border border-black/10 bg-cream px-5 py-2.5 text-xs font-semibold text-ink/80 transition hover:border-amber-700/30 hover:text-amber-700">
+          Abrir en Google Maps
+        </a>
+      </div>
+    </section>
   </main>
 
   <!-- ==================== PIE DE PÁGINA ==================== -->
@@ -135,7 +129,6 @@
 
   <!-- Lógica de renderizado -->
   <script>
-    // Formatea el precio con el símbolo de moneda del negocio
     function formatPrecio(precio) {
       return `${negocioData.moneda}${precio.toLocaleString("es-MX")}`;
     }
@@ -202,7 +195,7 @@
               <p class="mt-1 text-sm leading-relaxed text-ink/60 line-clamp-2">${p.descripcion}</p>
 
               <div class="mt-2 flex items-center justify-between gap-2">
-                ${p.popular ? `<span class="rounded-full px-2.5 py-0.5 text-xs font-medium ${negocioData.colores.badge}">Popular</span>` : "<span></span>"}
+                ${p.popular ? `<span class="rounded-full px-2.5 py-0.5 text-xs font-medium ${negocioData.colores.badge}">Popular</span>` : ""}
                 <a href="${waLink}" target="_blank" aria-label="Pedir ${p.nombre}" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white transition ${negocioData.colores.primario} ${negocioData.colores.hover}">
                   <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
                 </a>
