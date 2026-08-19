@@ -5,32 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cargando...</title>
 
-  <!-- ============================================ -->
-  <!-- ETIQUETAS OPEN GRAPH PARA WHATSAPP / REDES   -->
-  <!-- ============================================ -->
   <meta property="og:title" content="Vista Previa de tu Próxima Página Web" />
   <meta property="og:description" content="Haz clic para probar la demo interactiva y ver cómo recibir pedidos directamente por WhatsApp." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Klovia Web Solutions" />
 
-  <!-- Tipografías: Poppins para títulos, Inter para texto -->
   <link rel="preconnect" href="https://fonts.googleapis">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- CDN de Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ["Inter", "ui-sans-serif", "system-ui"],
-            display: ["Poppins", "ui-sans-serif", "system-ui"]
+            serif: ["Playfair Display", "serif"],
+            sans: ["Inter", "sans-serif"]
           },
           colors: {
-            cream: "#FAF6EF",
-            ink: "#2B2118"
+            stone: {
+              50: "#FAFAF9",
+              100: "#F5F5F4",
+              800: "#292524",
+              900: "#1C1917"
+            }
           }
         }
       }
@@ -40,119 +39,166 @@
   <style>
     #contenedor-categorias::-webkit-scrollbar { display: none; }
     #contenedor-categorias { scrollbar-width: none; }
+    .hero-gradient {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%);
+    }
   </style>
 </head>
 
-<body class="bg-cream text-ink font-sans">
+<body class="bg-stone-50 text-stone-900 font-sans antialiased">
 
-  <main>
-    <!-- ==================== ENCABEZADO / HERO CON FOTO ==================== -->
-    <header class="relative">
-      <div class="relative h-64 w-full sm:h-80 lg:h-[380px]">
-        <img id="hero-imagen" src="" alt="" class="h-full w-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-cream via-cream/60 to-cream/10"></div>
-      </div>
-
-      <div class="mx-auto -mt-16 max-w-3xl px-4 sm:-mt-20 lg:-mt-24 lg:max-w-5xl">
-        <div class="rounded-2xl border border-black/5 bg-white/90 p-6 text-center shadow-sm backdrop-blur sm:p-8">
-          <img id="nav-logo" src="" alt="Logo" class="mx-auto mb-3 h-14 w-14 rounded-xl object-contain hidden" onerror="this.classList.add('hidden')" />
-          <p id="header-subtitulo" class="font-display text-xs font-semibold uppercase tracking-[0.2em] text-amber-700"></p>
-          <h1 id="header-nombre" class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl"></h1>
-          <p id="header-slogan" class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-ink/70"></p>
-        </div>
-      </div>
-
-      <div class="mx-auto mt-4 max-w-3xl px-4 lg:max-w-5xl">
-        <div id="banner-delivery" class="rounded-full border border-amber-700/15 bg-amber-50 px-5 py-2.5 text-center text-xs font-medium text-amber-800 sm:text-sm"></div>
-      </div>
-    </header>
-
-    <div class="mx-auto max-w-3xl px-4 lg:max-w-6xl">
-      <!-- NAVEGACIÓN DE CATEGORÍAS (PESTAÑAS) -->
-      <nav class="sticky top-0 z-20 -mx-4 mt-6 flex gap-2 overflow-x-auto border-b border-black/5 bg-cream/90 px-4 py-3 backdrop-blur">
-        <div id="contenedor-categorias" class="flex gap-2"></div>
-      </nav>
-
-      <!-- LISTA DE PRODUCTOS -->
-      <div id="contenedor-productos" class="grid gap-4 py-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+  <!-- HERO SECTION - COMIDA PROTAGONISTA -->
+  <section class="relative min-h-[70vh] sm:min-h-[80vh]">
+    <div class="absolute inset-0">
+      <img id="hero-imagen" src="" alt="" class="h-full w-full object-cover" />
+      <div class="absolute inset-0 hero-gradient"></div>
     </div>
 
-    <!-- ==================== SECCIÓN SOBRE NOSOTROS ==================== -->
-    <section class="mx-auto max-w-3xl px-4 mb-12 rounded-2xl border border-black/5 bg-white p-6 sm:p-8 lg:p-10 lg:max-w-6xl lg:mb-16">
-      <div class="grid gap-6 md:grid-cols-12 md:items-center">
-        <div class="h-48 overflow-hidden rounded-xl bg-black/5 md:col-span-5 md:h-full">
-          <img id="nosotros-imagen" src="" alt="Sobre nosotros" class="h-full w-full object-cover" />
+    <div class="relative z-10 flex h-full min-h-[70vh] flex-col justify-end px-4 pb-12 sm:pb-16 sm:px-8 lg:pb-24">
+      <div class="mx-auto max-w-4xl text-center">
+        <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
+          <span class="h-2 w-2 rounded-full bg-green-400"></span>
+          <span id="header-subtitulo"></span>
         </div>
+        
+        <h1 id="header-nombre" class="mb-4 font-serif text-4xl font-bold text-white sm:text-5xl lg:text-6xl"></h1>
+        
+        <p id="header-slogan" class="mx-auto mb-8 max-w-2xl text-lg text-white/90 sm:text-xl"></p>
 
-        <div class="space-y-3 md:col-span-7">
-          <span id="nosotros-subtitulo" class="block font-display text-xs font-semibold uppercase tracking-[0.2em] text-amber-700"></span>
-          <h2 id="nosotros-titulo" class="font-display text-2xl font-bold text-ink"></h2>
-          <p id="nosotros-descripcion" class="text-sm leading-relaxed text-ink/70"></p>
-          <ul id="nosotros-caracteristicas" class="space-y-2 pt-2 text-sm font-medium text-ink/80"></ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SECCIÓN MAPA Y UBICACIÓN ==================== -->
-    <section class="mx-auto max-w-3xl px-4 mb-12 rounded-2xl border border-black/5 bg-white p-6 sm:p-8 lg:p-10 lg:max-w-6xl lg:mb-16">
-      <div class="mx-auto mb-6 max-w-xl text-center">
-        <span class="mb-1 block font-display text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">Visítanos</span>
-        <h2 class="font-display text-2xl font-bold text-ink">Nuestra Ubicación</h2>
-        <p id="mapa-direccion-texto" class="mt-1 text-sm text-ink/60"></p>
-      </div>
-
-      <div class="relative h-64 w-full overflow-hidden rounded-xl border border-black/5 bg-black/5 sm:h-80 lg:h-96">
-        <iframe id="mapa-iframe" class="h-full w-full border-0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src=""></iframe>
-      </div>
-
-      <div class="mt-4 text-center">
-        <a id="mapa-btn-enlace" href="#" target="_blank" class="inline-flex items-center gap-2 rounded-full border border-black/10 bg-cream px-5 py-2.5 text-xs font-semibold text-ink/80 transition hover:border-amber-700/30 hover:text-amber-700">
-          Abrir en Google Maps
+        <a id="hero-cta" href="#menu" class="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-stone-900 transition hover:bg-stone-100">
+          <img id="hero-logo" src="" alt="Logo" class="h-8 w-8 rounded-full object-contain hidden" onerror="this.classList.add('hidden')" />
+          Ver Menú
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
         </a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <!-- ==================== PIE DE PÁGINA ==================== -->
-  <footer class="border-t border-black/5 bg-white py-8 px-4 text-center text-xs text-ink/60">
-    <div class="mx-auto max-w-md space-y-2">
-      <p id="footer-ubicacion" class="font-medium text-ink/80"></p>
-      <p id="footer-horario" class="text-ink/50"></p>
-      <div class="mt-4 border-t border-black/5 pt-4 text-ink/40">
-        &copy; <span id="footer-year"></span> <span id="footer-nombre"></span> — Desarrollado con Klovia Web Solutions
+  <!-- CATEGORÍAS - NAVEGACIÓN FLUIDA -->
+  <nav id="menu" class="sticky top-0 z-30 bg-stone-50/95 px-4 py-4 backdrop-blur sm:px-8">
+    <div class="mx-auto max-w-6xl">
+      <div id="contenedor-categorias" class="flex gap-3 overflow-x-auto pb-2"></div>
+    </div>
+  </nav>
+
+  <!-- SECCIÓN DESTACADOS -->
+  <section class="px-4 py-12 sm:px-8 lg:px-12">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-8 flex items-center justify-between">
+        <div>
+          <h2 class="font-serif text-3xl font-bold text-stone-900 sm:text-4xl">Destacados</h2>
+          <p class="mt-2 text-stone-600">Nuestros platos más solicitados</p>
+        </div>
+        <div id="banner-delivery" class="hidden rounded-full bg-amber-100 px-4 py-2 text-sm font-medium text-amber-800 sm:block"></div>
       </div>
+
+      <div id="contenedor-destacados" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </div>
+  </section>
+
+  <!-- MENÚ COMPLETO -->
+  <section class="px-4 py-12 sm:px-8 lg:px-12">
+    <div class="mx-auto max-w-6xl">
+      <h2 class="mb-8 font-serif text-3xl font-bold text-stone-900 sm:text-4xl">Menú Completo</h2>
+      <div id="contenedor-productos" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section class="bg-stone-900 px-4 py-16 text-white sm:px-8 lg:px-12">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="order-2 lg:order-1">
+          <span id="nosotros-subtitulo" class="mb-4 block text-sm font-semibold uppercase tracking-widest text-amber-400"></span>
+          <h2 id="nosotros-titulo" class="mb-6 font-serif text-3xl font-bold sm:text-4xl"></h2>
+          <p id="nosotros-descripcion" class="mb-8 text-lg text-stone-300"></p>
+          
+          <ul id="nosotros-caracteristicas" class="space-y-3"></ul>
+        </div>
+        
+        <div class="order-1 lg:order-2">
+          <div class="aspect-square overflow-hidden rounded-2xl">
+            <img id="nosotros-imagen" src="" alt="" class="h-full w-full object-cover" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN Y CONTACTO -->
+  <section class="px-4 py-16 sm:px-8 lg:px-12">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-12 text-center">
+        <h2 class="mb-4 font-serif text-3xl font-bold text-stone-900 sm:text-4xl">Visítanos</h2>
+        <p id="mapa-direccion-texto" class="text-lg text-stone-600"></p>
+      </div>
+
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="aspect-video overflow-hidden rounded-2xl">
+          <iframe id="mapa-iframe" class="h-full w-full border-0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src=""></iframe>
+        </div>
+
+        <div class="flex flex-col justify-center space-y-6">
+          <div>
+            <h3 class="mb-2 font-serif text-xl font-bold">Horario</h3>
+            <p id="footer-horario" class="text-stone-600"></p>
+          </div>
+          
+          <div>
+            <h3 class="mb-2 font-serif text-xl font-bold">Contacto</h3>
+            <p id="footer-ubicacion" class="text-stone-600"></p>
+          </div>
+
+          <a id="mapa-btn-enlace" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-white transition ${negocioData.colores.primario} ${negocioData.colores.hover}">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            Abrir en Google Maps
+          </a>
+
+          <div id="banner-delivery-mobile" class="rounded-full bg-amber-100 px-4 py-3 text-center text-sm font-medium text-amber-800 sm:hidden"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-stone-200 bg-white px-4 py-8 sm:px-8">
+    <div class="mx-auto max-w-6xl text-center">
+      <p class="text-sm text-stone-600">
+        &copy; <span id="footer-year"></span> <span id="footer-nombre"></span> — Desarrollado con Klovia Web Solutions
+      </p>
     </div>
   </footer>
 
-  <!-- Datos del negocio -->
   <script src="js/data.js"></script>
 
-  <!-- Lógica de renderizado -->
   <script>
     function formatPrecio(precio) {
       return `${negocioData.moneda}${precio.toLocaleString("es-MX")}`;
     }
 
-    // 1. Encabezado y pie de página
     document.title = negocioData.nombre;
     document.getElementById("header-nombre").innerText = negocioData.nombre;
     document.getElementById("header-subtitulo").innerText = negocioData.nosotros?.subtitulo || "";
     document.getElementById("header-slogan").innerText = negocioData.slogan;
     document.getElementById("footer-nombre").innerText = negocioData.nombre;
     document.getElementById("footer-year").innerText = new Date().getFullYear();
-    document.getElementById("footer-ubicacion").innerText = `Ubicación: ${negocioData.contacto.ubicacion}`;
-    document.getElementById("footer-horario").innerText = `Horario: ${negocioData.contacto.horario}`;
+    document.getElementById("footer-ubicacion").innerText = negocioData.contacto.ubicacion;
+    document.getElementById("footer-horario").innerText = negocioData.contacto.horario;
     document.getElementById("banner-delivery").innerText = negocioData.contacto.notaDelivery;
+    document.getElementById("banner-delivery-mobile").innerText = negocioData.contacto.notaDelivery;
     document.getElementById("hero-imagen").src = negocioData.heroImagen || negocioData.nosotros?.imagen || "";
     document.getElementById("hero-imagen").alt = `Platillos de ${negocioData.nombre}`;
 
     if (negocioData.logo) {
-      const imgLogo = document.getElementById("nav-logo");
-      imgLogo.src = negocioData.logo;
-      imgLogo.classList.remove("hidden");
+      const heroLogo = document.getElementById("hero-logo");
+      heroLogo.src = negocioData.logo;
+      heroLogo.classList.remove("hidden");
     }
 
-    // 2. Botones de categorías
     const contCat = document.getElementById("contenedor-categorias");
     negocioData.categorias.forEach((cat, index) => {
       const btn = document.createElement("button");
@@ -164,49 +210,85 @@
     });
 
     function claseBotonCategoria(activo) {
-      return `shrink-0 rounded-full border px-4 py-1.5 text-sm font-medium transition-colors whitespace-nowrap ${
+      return `shrink-0 rounded-full px-6 py-3 text-sm font-semibold transition-colors whitespace-nowrap ${
         activo
-          ? `border-transparent text-white ${negocioData.colores.primario}`
-          : "border-black/10 bg-white text-ink/60 hover:text-ink"
+          ? `text-white ${negocioData.colores.primario}`
+          : "bg-white text-stone-600 shadow-sm hover:bg-stone-100"
       }`;
     }
 
-    // 3. Tarjetas de productos
-    function renderizarProductos(lista) {
-      const contProd = document.getElementById("contenedor-productos");
-      contProd.innerHTML = "";
+    function renderizarProductoCard(p, isFeatured = false) {
+      const msg = encodeURIComponent(`¡Hola! Vi su página web y me gustaría recibir más información sobre ${p.nombre}.`);
+      const waLink = `https://wa.me/${negocioData.whatsapp}?text=${msg}`;
 
-      lista.forEach((p) => {
-        const msg = encodeURIComponent(`¡Hola! Vi su página web y me gustaría recibir más información sobre ${p.nombre}.`);
-        const waLink = `https://wa.me/${negocioData.whatsapp}?text=${msg}`;
-
-        contProd.innerHTML += `
-          <article class="flex gap-4 rounded-xl border border-black/5 bg-white p-3.5 transition-colors hover:border-amber-700/30 sm:p-4 lg:p-5">
-            <div class="h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-black/5 sm:h-24 sm:w-24 lg:h-28 lg:w-28">
-              <img src="${p.imagen}" alt="${p.nombre}" class="h-full w-full object-cover" />
+      if (isFeatured) {
+        return `
+          <article class="group relative overflow-hidden rounded-2xl bg-white shadow-md transition-all hover:shadow-xl">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="${p.imagen}" alt="${p.nombre}" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+              ${p.popular ? `<span class="absolute top-4 right-4 rounded-full px-3 py-1 text-xs font-semibold text-white ${negocioData.colores.badge}">Popular</span>` : ''}
             </div>
-
-            <div class="flex min-w-0 flex-1 flex-col">
-              <div class="flex items-baseline justify-between gap-3">
-                <h3 class="font-display text-base font-semibold leading-tight text-ink">${p.nombre}</h3>
-                <span class="shrink-0 font-display text-base font-semibold ${negocioData.colores.texto}">${formatPrecio(p.precio)}</span>
+            <div class="p-6">
+              <div class="mb-3 flex items-start justify-between gap-4">
+                <h3 class="font-serif text-xl font-bold text-stone-900">${p.nombre}</h3>
+                <span class="shrink-0 font-serif text-xl font-bold ${negocioData.colores.texto}">${formatPrecio(p.precio)}</span>
               </div>
-
-              <p class="mt-1 text-sm leading-relaxed text-ink/60 line-clamp-2">${p.descripcion}</p>
-
-              <div class="mt-2 flex items-center justify-between gap-2">
-                ${p.popular ? `<span class="rounded-full px-2.5 py-0.5 text-xs font-medium ${negocioData.colores.badge}">Popular</span>` : ""}
-                <a href="${waLink}" target="_blank" aria-label="Pedir ${p.nombre}" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white transition ${negocioData.colores.primario} ${negocioData.colores.hover}">
-                  <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                </a>
-              </div>
+              <p class="mb-4 text-stone-600 line-clamp-2">${p.descripcion}</p>
+              <a href="${waLink}" target="_blank" class="inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold text-white transition ${negocioData.colores.primario} ${negocioData.colores.hover}">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                </svg>
+                WhatsApp
+              </a>
             </div>
           </article>
         `;
+      }
+
+      return `
+        <article class="group flex gap-4 rounded-xl bg-white p-4 shadow-sm transition-all hover:shadow-md">
+          <div class="h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-stone-100 sm:h-28 sm:w-28">
+            <img src="${p.imagen}" alt="${p.nombre}" class="h-full w-full object-cover" />
+          </div>
+          <div class="flex min-w-0 flex-1 flex-col justify-between">
+            <div>
+              <div class="flex items-start justify-between gap-3">
+                <h3 class="font-serif text-base font-bold text-stone-900">${p.nombre}</h3>
+                <span class="shrink-0 font-serif text-base font-bold ${negocioData.colores.texto}">${formatPrecio(p.precio)}</span>
+              </div>
+              <p class="mt-1 text-sm text-stone-600 line-clamp-2">${p.descripcion}</p>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              ${p.popular ? `<span class="text-xs font-medium ${negocioData.colores.texto}">★ Popular</span>` : '<span></span>'}
+              <a href="${waLink}" target="_blank" class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white transition ${negocioData.colores.primario} ${negocioData.colores.hover}">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderizarProductos(lista) {
+      const contProd = document.getElementById("contenedor-productos");
+      const contDest = document.getElementById("contenedor-destacados");
+      contProd.innerHTML = "";
+      contDest.innerHTML = "";
+
+      const destacados = lista.filter(p => p.popular);
+      const regulares = lista.filter(p => !p.popular);
+
+      destacados.forEach(p => {
+        contDest.innerHTML += renderizarProductoCard(p, true);
+      });
+
+      lista.forEach(p => {
+        contProd.innerHTML += renderizarProductoCard(p, false);
       });
     }
 
-    // 4. Filtrado por categoría
     function filtrarProductos(categoriaId) {
       negocioData.categorias.forEach((cat) => {
         const btn = document.getElementById(`btn-cat-${cat.id}`);
@@ -223,7 +305,6 @@
 
     renderizarProductos(negocioData.productos);
 
-    // 5. Sección "Sobre nosotros"
     document.getElementById("nosotros-subtitulo").innerText = negocioData.nosotros.subtitulo;
     document.getElementById("nosotros-titulo").innerText = negocioData.nosotros.titulo;
     document.getElementById("nosotros-descripcion").innerText = negocioData.nosotros.descripcion;
@@ -233,16 +314,15 @@
     const contCarac = document.getElementById("nosotros-caracteristicas");
     negocioData.nosotros.caracteristicas.forEach((item) => {
       contCarac.innerHTML += `
-        <li class="flex items-start gap-2">
-          <svg class="mt-0.5 h-4 w-4 shrink-0 ${negocioData.colores.texto}" viewBox="0 0 20 20" fill="currentColor">
+        <li class="flex items-center gap-3 text-stone-300">
+          <svg class="h-5 w-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.415l-7.005 7.005a1 1 0 01-1.414 0L3.296 8.72a1 1 0 111.414-1.414l4.284 4.284 6.296-6.296a1 1 0 011.414 0z" clip-rule="evenodd" />
           </svg>
-          <span>${item}</span>
+          <span class="font-medium">${item}</span>
         </li>
       `;
     });
 
-    // 6. Mapa de ubicación
     const direccion = negocioData.contacto.ubicacion;
     if (direccion) {
       document.getElementById("mapa-direccion-texto").innerText = direccion;
